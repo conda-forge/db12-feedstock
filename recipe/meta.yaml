@@ -29,6 +29,7 @@ test:
     - tests
   requires:
     - pytest
+    - mock
   imports:
     - db12
   commands:
