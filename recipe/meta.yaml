@@ -1,5 +1,5 @@
 {% set name = "DB12" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fab97a28cb7100c0c499b0e4746f7de7de1a472fc56f8376adf949efc6b055fa
+  sha256: d0ee165958836c9ef8c37766d8ccf1b3f4a0991284e0f0655564bd2b7a9de36d
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - db12 = db12.__main__:main
 
@@ -39,7 +39,7 @@ about:
   license: LGPL-3.0-only
   license_family: LGPL
   license_file: LICENSE
-  summary: 'Dirac benchmark 2012 - a fast benchmark utility to estimate the power of a CPU'
+  summary: Dirac benchmark 2012 - a fast benchmark utility to estimate the power of a CPU
   description: |
     Dirac benchmark 2012 (DB12) is a fast benchmark utility used to estimate the power of a CPU.
     It is mainly used in the HEP context to forecast the duration of a given job in a WLCG worker node.
