@@ -1,5 +1,5 @@
 {% set name = "DB12" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d0ee165958836c9ef8c37766d8ccf1b3f4a0991284e0f0655564bd2b7a9de36d
+  sha256: 014ddd87f8652fbf88ce5ad016dfdfbfc92c3845f3d294121aff1aa1a9552a5b
 
 build:
   noarch: python
