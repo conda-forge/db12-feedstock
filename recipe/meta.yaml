@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 014ddd87f8652fbf88ce5ad016dfdfbfc92c3845f3d294121aff1aa1a9552a5b
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - db12 = db12.__main__:main
 
 requirements:
   host:
-    - python >=2.7
+    - python {{ python_min }}
     - pip
     - setuptools-scm
   run:
-    - python >=2.7
+    - python >={{ python_min }}
 
 test:
   source_files:
@@ -31,6 +31,7 @@ test:
     - pytest
     - pytest-mock
     - mock
+    - python {{ python_min }}
   imports:
     - db12
   commands:
